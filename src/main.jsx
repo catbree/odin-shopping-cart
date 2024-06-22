@@ -6,6 +6,7 @@ import Root from "./routes/root";
 import ErrorPage from "./errorPage";
 import ShopPage from "./routes/shopPage";
 import ProductPage from "./routes/productPage";
+import CartPage from "./routes/cartPage";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <div>Cart!</div>,
+        element: <CartPage />,
       },
     ],
   },
