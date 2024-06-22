@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function ShopPage() {
   const [shopProducts, setShopProducts] = useState([]);
@@ -18,8 +19,17 @@ export default function ShopPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>A network error has occured.</p>
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>A network error has occured.</p>;
 
-  return <div>Its shop time!</div>;
+  return (
+    <div>
+      <div>Hello World Title!</div>
+      <div id="product-grid">
+        {shopProducts.map((product) => (
+          <li key={product.id}><Link to={`/products/${product.id}`}>{product.title}</Link></li>
+        ))}
+      </div>
+    </div>
+  );
 }
