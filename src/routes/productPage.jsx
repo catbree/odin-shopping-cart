@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./productPage.css";
 
 export default function ProductPage() {
 
@@ -25,9 +26,15 @@ export default function ProductPage() {
     if (error) return <p>A network error has occured.</p>;
     
   return (
-    <div>
-      <p>Hello World!</p>
-      <p>We need this to turn into a custom title: {product.title} </p>
+    <div className="product-container">
+        <img src={product.image} alt=""/>
+        <div className="product-content">
+            <h1>{product.title}</h1>
+            <p>${product.price} SGD</p>
+            <p>{product.description}</p>
+            <input type="number" value="1" min="1"></input>
+            <button>Add to Cart</button>
+        </div>
     </div>
   );
 }
