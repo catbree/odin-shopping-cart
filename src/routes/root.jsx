@@ -1,9 +1,22 @@
 import { Link, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Root() {
   const [cartItems, setCartItems] = useState([]);
   const cartItemsTotalQty = cartItems.length;
+
+  useEffect(() => {
+    const localStorageCartItems = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(localStorageCartItems)
+    if (localStorageCartItems) {
+      setCartItems(localStorageCartItems);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   return (
     <div>
       <div id="navbar">

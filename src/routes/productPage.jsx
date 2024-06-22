@@ -4,6 +4,7 @@ import "./productPage.css";
 
 export default function ProductPage() {
   const [cartItems, setCartItems] = useOutletContext();
+
   function addToCart(newId) {
     setCartItems([...cartItems, { id: newId, qty: 1 }]);
   }
