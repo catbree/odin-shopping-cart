@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    max-width: 1200px;
+    border-spacing: 40px;
+}
+
+th {
+    text-align: left;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+td {
+    vertical-align: top;
+}
+
+td.cart-item-details {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+}
+
+.item-image-container > img {
+    width: 80px;
+    height: 80px;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item-details > p {
+    margin: 0;
+}
+
+tr.cart-item:last-child {
+    text-align: right;
+}
