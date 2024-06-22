@@ -1,8 +1,26 @@
-# React + Vite
+# Odin Shopping Cart 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+State: ShoppingCart Item Counter
 
-Currently, two official plugins are available:
+NavBar (Home Logo, Shop Categories, Shopping Cart)
+Page Content Router
+    ShopPage ("/shop")
+    ProductPage ("/product")
+    CartPage ("/cart")
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ShopPage
+- Product Card Component
+- clicking into any brings them to product page
+
+ProductPage
+- Name of product
+- price
+- description
+- quantity
+- add to cart
+
+CaRTpAGE
+- Item, price, quantity, total
+- Final total
+- Submit your order
+
