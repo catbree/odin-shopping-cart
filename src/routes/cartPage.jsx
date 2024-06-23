@@ -23,11 +23,11 @@ export default function CartPage() {
                 </div>
                 <div className="item-details">
                   <p>{item.title}</p>
-                  <p>${item.price}</p>
+                  <p>${item.price.toFixed(2)}</p>
                 </div>
               </td>
-              <td>#</td>
-              <td className="align-right">$###</td>
+              <td>{item.qty}</td>
+              <td className="align-right">${(item.qty * item.price).toFixed(2)}</td>
             </tr>
           ))}
         </tbody>

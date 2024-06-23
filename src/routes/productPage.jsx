@@ -5,8 +5,19 @@ import "./productPage.css";
 export default function ProductPage() {
   const [cartItems, setCartItems] = useOutletContext();
 
+  // function addToCart(id, title, price, image) {
+  //   setCartItems([...cartItems, { id: id, title: title, price: price, image: image, qty: 1 }]);
+  // }
+
   function addToCart(id, title, price, image) {
-    setCartItems([...cartItems, { id: id, title: title, price: price, image: image, qty: 1 }]);
+    const itemIndex = cartItems.findIndex((item) => item.id === id);
+    if (itemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      newCartItems[itemIndex].qty += 1;
+      setCartItems(newCartItems);
+    } else {
+      setCartItems([...cartItems, { id, title, price, image, qty: 1 }]);
+    }
   }
 
   const { id } = useParams();
@@ -35,9 +46,15 @@ export default function ProductPage() {
       <img src={product.image} alt="" />
       <div className="product-content">
         <h1>{product.title}</h1>
-        <p>${product.price} SGD</p>
+        <p>${product.price.toFixed(2)}</p>
         <p>{product.description}</p>
-        <button onClick={() => addToCart(product.id,product.title,product.price,product.image)}>Add to Cart</button>
+        <button
+          onClick={() =>
+            addToCart(product.id, product.title, product.price, product.image)
+          }
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );
