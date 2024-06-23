@@ -22,6 +22,10 @@ td.cart-item-details {
     text-align: left;
 }
 
+td.align-right {
+    text-align: right;
+}
+
 .item-image-container > img {
     width: 80px;
     height: 80px;
@@ -35,8 +39,4 @@ td.cart-item-details {
 
 .item-details > p {
     margin: 0;
-}
-
-tr.cart-item:last-child {
-    text-align: right;
 }

@@ -16,22 +16,21 @@ export default function CartPage() {
           </tr>
         </thead>
         <tbody>
-          <tr className="cart-item">
-            <td className="cart-item-details">
-              <div className="item-image-container">
-                <img
-                  src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="item-details">
-                <p>John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</p>
-                <p>$695.00</p>
-              </div>
-            </td>
-            <td>1</td>
-            <td>$695.00</td>
-          </tr>
+          {cartItems.map((item) => (
+            <tr key={item.id} className="cart-item">
+              <td className="cart-item-details">
+                <div className="item-image-container">
+                  <img src={item.image} alt=""></img>
+                </div>
+                <div className="item-details">
+                  <p>{item.title}</p>
+                  <p>${item.price}</p>
+                </div>
+              </td>
+              <td>#</td>
+              <td className="align-right">$###</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
