@@ -23,7 +23,7 @@ export default function CartPage() {
                 </div>
                 <div className="item-details">
                   <p>{item.title}</p>
-                  <p>${item.price.toFixed(2)}</p>
+                  <p>${item.price}</p>
                 </div>
               </td>
               <td>{item.qty}</td>

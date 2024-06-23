@@ -4,19 +4,20 @@ import "./productPage.css";
 
 export default function ProductPage() {
   const [cartItems, setCartItems] = useOutletContext();
+  const [quantity, setQuantity] = useState(1);
 
   // function addToCart(id, title, price, image) {
   //   setCartItems([...cartItems, { id: id, title: title, price: price, image: image, qty: 1 }]);
   // }
 
-  function addToCart(id, title, price, image) {
+  function addToCart(id, title, price, image, qty) {
     const itemIndex = cartItems.findIndex((item) => item.id === id);
     if (itemIndex !== -1) {
       const newCartItems = [...cartItems];
-      newCartItems[itemIndex].qty += 1;
+      newCartItems[itemIndex].qty += +qty;
       setCartItems(newCartItems);
     } else {
-      setCartItems([...cartItems, { id, title, price, image, qty: 1 }]);
+      setCartItems([...cartItems, { id, title, price, image, qty }]);
     }
   }
 
@@ -48,9 +49,17 @@ export default function ProductPage() {
         <h1>{product.title}</h1>
         <p>${product.price.toFixed(2)}</p>
         <p>{product.description}</p>
+        <input
+          className="quantity-input"
+          type="number"
+          value={quantity}
+          min="1"
+          onChange={(e) => setQuantity(e.target.value)}
+        />
         <button
+          className="secondary-button"
           onClick={() =>
-            addToCart(product.id, product.title, product.price, product.image)
+            addToCart(product.id, product.title, product.price, product.image, quantity)
           }
         >
           Add to Cart
