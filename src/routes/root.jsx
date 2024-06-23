@@ -8,7 +8,7 @@ export default function Root() {
   useEffect(() => {
     const localStorageCartItems = JSON.parse(localStorage.getItem("cartItems"));
     console.log(localStorageCartItems)
-    if (localStorageCartItems) {
+    if (localStorageCartItems.length > 0) {
       setCartItems(localStorageCartItems);
     }
   }, []);

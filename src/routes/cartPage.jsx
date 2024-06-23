@@ -3,7 +3,6 @@ import "./cartPage.css";
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useOutletContext();
-  console.log(cartItems);
   return (
     <div>
       <h1>Your cart</h1>
