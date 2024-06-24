@@ -6,10 +6,6 @@ export default function ProductPage() {
   const [cartItems, setCartItems] = useOutletContext();
   const [quantity, setQuantity] = useState(1);
 
-  // function addToCart(id, title, price, image) {
-  //   setCartItems([...cartItems, { id: id, title: title, price: price, image: image, qty: 1 }]);
-  // }
-
   function addToCart(id, title, price, image, qty) {
     const itemIndex = cartItems.findIndex((item) => item.id === id);
     if (itemIndex !== -1) {

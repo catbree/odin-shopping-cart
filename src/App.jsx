@@ -4,6 +4,7 @@ import Root from "./pages/Root";
 import ShopPage from "./pages/ShopPage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import MainPage from "./pages/MainPage";
 
 import ErrorPage from "./ErrorPage";
 
@@ -14,6 +15,10 @@ export default function App() {
       element: <Root />,
       errorElement: <ErrorPage />,
       children: [
+        {
+          index: true,
+          element: <MainPage />,
+        },
         {
           path: "/shop",
           element: <ShopPage />,

@@ -1,5 +1,7 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+import Navbar from "../components/Navbar";
 
 export default function Root() {
   const [cartItems, setCartItems] = useState([]);
@@ -19,16 +21,7 @@ export default function Root() {
 
   return (
     <div>
-      <div id="navbar">
-        <ul>
-          <li>
-            <Link to="shop">Shop</Link>
-          </li>
-          <li>
-            <Link to="cart">Cart: {cartItemsTotalQty}</Link>
-          </li>
-        </ul>
-      </div>
+      <Navbar cartItemsTotalQty={cartItemsTotalQty} />
       <div id="page-content">
         <Outlet context={[cartItems, setCartItems]} />
       </div>

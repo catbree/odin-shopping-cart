@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "Varela Round";
+    src: url(src/assets/fonts/VarelaRound-Regular.ttf);
+}
+
+body {
+    font-family: "Varela Round", sans-serif;
+    font-size: 1rem;
+    padding: 40px;
+    color: rgba(35, 29, 25, 0.75);
+    background-color: #fff3f5;
+}
+
+#navbar > ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-start: 0;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: rgba(35, 29, 25, 0.75);
+}
+
+.store-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #FB74C4;
+}
+
+.store-logo > img {
+    width: 48px;
+}
