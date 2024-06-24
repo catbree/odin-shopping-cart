@@ -1,5 +1,7 @@
+import Title from "../components/Title";
+
 export default function MainPage() {
     return (
-        <div>Hello World!</div>
+        <Title>Hello, welcome to Fake Shop!</Title>
     )
 }

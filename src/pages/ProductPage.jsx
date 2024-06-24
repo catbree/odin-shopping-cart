@@ -2,6 +2,8 @@ import { useParams, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./productPage.css";
 
+import Title from "../components/Title";
+
 export default function ProductPage() {
   const [cartItems, setCartItems] = useOutletContext();
   const [quantity, setQuantity] = useState(1);
@@ -40,10 +42,12 @@ export default function ProductPage() {
 
   return (
     <div className="product-container">
-      <img src={product.image} alt="" />
+      <div className="individual-product-image-container">
+        <img className="individual-product-image" src={product.image} alt="" />
+      </div>
       <div className="product-content">
-        <h1>{product.title}</h1>
-        <p>${product.price.toFixed(2)}</p>
+        <Title>{product.title}</Title>
+        <p className="product-price">${product.price.toFixed(2)}</p>
         <p>{product.description}</p>
         <input
           className="quantity-input"
@@ -55,7 +59,13 @@ export default function ProductPage() {
         <button
           className="secondary-button"
           onClick={() =>
-            addToCart(product.id, product.title, product.price, product.image, quantity)
+            addToCart(
+              product.id,
+              product.title,
+              product.price,
+              product.image,
+              quantity
+            )
           }
         >
           Add to Cart

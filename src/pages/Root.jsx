@@ -9,7 +9,6 @@ export default function Root() {
 
   useEffect(() => {
     const localStorageCartItems = JSON.parse(localStorage.getItem("cartItems"));
-    console.log(localStorageCartItems)
     if (localStorageCartItems && localStorageCartItems.length > 0) {
       setCartItems(localStorageCartItems);
     }
@@ -22,7 +21,7 @@ export default function Root() {
   return (
     <div>
       <Navbar cartItemsTotalQty={cartItemsTotalQty} />
-      <div id="page-content">
+      <div className="page-content">
         <Outlet context={[cartItems, setCartItems]} />
       </div>
     </div>

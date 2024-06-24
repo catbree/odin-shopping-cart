@@ -1,38 +1,77 @@
 @font-face {
-    font-family: "Varela Round";
-    src: url(src/assets/fonts/VarelaRound-Regular.ttf);
+  font-family: "Varela Round";
+  src: url(./assets/fonts/VarelaRound-Regular.ttf) format("truetype"),
 }
 
 body {
-    font-family: "Varela Round", sans-serif;
-    font-size: 1rem;
-    padding: 40px;
-    color: rgba(35, 29, 25, 0.75);
-    background-color: #fff3f5;
+  font-family: "Varela Round", sans-serif;
+  font-size: 1rem;
+  padding: 4rem;
+  color: rgba(35, 29, 25, 0.75);
+  background-color: #fff3f5;
+}
+
+.page-content {
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 64px;
+}
+
+h1.title {
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 1.5rem;
 }
 
 #navbar > ul {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline-start: 0;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 0;
 }
 
 #navbar a {
-    text-decoration: none;
-    color: rgba(35, 29, 25, 0.75);
+  text-decoration: none;
+  color: rgba(35, 29, 25, 0.75);
 }
 
 .store-logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    color: #FB74C4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #fb74c4;
+  font-weight: 700;
 }
 
 .store-logo > img {
-    width: 48px;
+  width: 48px;
 }
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 160%;
+}
+
+.secondary-button {
+    height: 54px;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    padding: 0px 24px;
+    font-size: 1.2rem;
+    font-family: "Varela Round", sans-serif;
+    color: #fb74c4;
+    border: 2px solid #fb74c4;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.secondary-button:hover {
+    background-color: #fb74c520;
+}
+
+

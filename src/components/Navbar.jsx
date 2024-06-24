@@ -12,7 +12,7 @@ export default function Navbar( {cartItemsTotalQty} ) {
             <Link to="/">
                 <div className="store-logo">
                     <img src="src/assets/images/storeIcon.png" />
-                    <span><b>Fake Shop</b></span>
+                    <span>Fake Shop</span>
                 </div>
             </Link>
         </li>

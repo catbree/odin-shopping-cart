@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import "./cartPage.css";
+import Title from "../components/Title";
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useOutletContext();
@@ -24,7 +25,7 @@ export default function CartPage() {
 
   return (
     <div>
-      <h1>Your cart</h1>
+      <Title>Your cart</Title>
       <table className="cart-items">
         <thead>
           <tr>
