@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import storeIcon from "../assets/images/storeIcon.png"
 
 export default function Navbar( {cartItemsTotalQty} ) {
     return (
@@ -11,7 +12,7 @@ export default function Navbar( {cartItemsTotalQty} ) {
           <li>
             <Link to="/">
                 <div className="store-logo">
-                    <img src="src/assets/images/storeIcon.png" />
+                    <img src={storeIcon} alt="" />
                     <span>Fake Shop</span>
                 </div>
             </Link>

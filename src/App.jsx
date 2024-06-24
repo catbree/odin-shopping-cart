@@ -1,10 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
 import Root from "./pages/Root";
 import ShopPage from "./pages/ShopPage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
-import MainPage from "./pages/MainPage";
 
 import ErrorPage from "./ErrorPage";
 
@@ -17,7 +16,7 @@ export default function App() {
       children: [
         {
           index: true,
-          element: <MainPage />,
+          element: <Navigate to="/shop" />,
         },
         {
           path: "/shop",

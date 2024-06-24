@@ -56,6 +56,29 @@ p {
     line-height: 160%;
 }
 
+p.p-small {
+    font-size: 0.9rem;
+}
+
+.primary-button {
+    margin-top: 8px;
+    height: 54px;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    padding: 0px 24px;
+    font-size: 1.2rem;
+    font-family: "Varela Round", sans-serif;
+    color: #fb74c4;
+    border: 2px solid #fb74c4;
+    background-color: #fb74c520;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.primary-button:hover {
+    background-color: #fb74c54f;
+}
+
 .secondary-button {
     height: 54px;
     border-radius: 8px;
@@ -74,4 +97,24 @@ p {
     background-color: #fb74c520;
 }
 
+.icon-button {
+    height: 42px;
+    width: 42px;
+    padding-top: 4px;
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+
+}
+
+.icon-button:hover {
+    border-radius: 4px;
+    background-color:rgba(255, 0, 0, 0.1)
+}
+
+.red {
+    color: rgba(255, 0, 0, 0.607);
+}
 

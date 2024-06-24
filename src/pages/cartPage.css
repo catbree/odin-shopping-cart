@@ -1,11 +1,15 @@
 table {
-    width: 100%;
-    max-width: 1200px;
+    width: 100% + 40px;
     border-spacing: 40px;
 }
 
 th {
     text-align: left;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+
 }
 
 th:last-child {
@@ -14,6 +18,11 @@ th:last-child {
 
 td {
     vertical-align: top;
+}
+
+.quantity-td {
+    display: flex;
+    gap: 8px;
 }
 
 td.cart-item-details {
@@ -29,6 +38,9 @@ td.align-right {
 .item-image-container > img {
     width: 80px;
     height: 80px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 16px;
 }
 
 .item-details {
@@ -39,4 +51,24 @@ td.align-right {
 
 .item-details > p {
     margin: 0;
+}
+
+.cart-item-title {
+    font-weight: 700;
+}
+
+.horizontal-divider {
+    border-top: 1px solid rgba(35, 29, 25, 0.2);
+    margin-bottom: 40px;
+}
+
+.cart-footer {
+    max-width: 400px;
+    margin-right: 40px;
+    margin-left: auto;
+    text-align: right;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }

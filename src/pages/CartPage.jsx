@@ -7,7 +7,8 @@ export default function CartPage() {
 
   const estimatedTotal = cartItems
     .map((item) => item.qty * item.price)
-    .reduce((partialSum, a) => partialSum + a, 0);
+    .reduce((partialSum, a) => partialSum + a, 0)
+    .toFixed(2);
 
   function handleUpdateQty(id, qty) {
     const itemIndex = cartItems.findIndex((item) => item.id === id);
@@ -42,19 +43,26 @@ export default function CartPage() {
                   <img src={item.image} alt=""></img>
                 </div>
                 <div className="item-details">
-                  <p>{item.title}</p>
-                  <p>${item.price}</p>
+                  <p className="cart-item-title">{item.title}</p>
+                  <p className="cart-item-price">${item.price}</p>
                 </div>
               </td>
               <td>
-                <input
-                  className="quantity-input"
-                  type="number"
-                  value={item.qty}
-                  min="1"
-                  onChange={(e) => handleUpdateQty(item.id, e.target.value)}
-                />
-                <button onClick={() => deleteCartItem(item.id)}>Remove</button>
+                <div className="quantity-td">
+                  <input
+                    className="quantity-input"
+                    type="number"
+                    value={item.qty}
+                    min="1"
+                    onChange={(e) => handleUpdateQty(item.id, e.target.value)}
+                  />
+                  <button
+                    className="icon-button red"
+                    onClick={() => deleteCartItem(item.id)}
+                  >
+                    ❌
+                  </button>
+                </div>
               </td>
               <td className="align-right">
                 ${(item.qty * item.price).toFixed(2)}
@@ -63,10 +71,12 @@ export default function CartPage() {
           ))}
         </tbody>
       </table>
-      <div>
-        <button onClick={()=>setCartItems([])}>Clear cart</button>
-        <p>Estimated total: ${estimatedTotal}</p>
-        <p>Taxes, discounts, and shipping calculated at checkout</p>
+      <div className="horizontal-divider"></div>
+      <div className="cart-footer">
+        {/* <button className="tertiary-button" onClick={()=>setCartItems([])}>Clear cart</button> */}
+        <p>Estimated total: <b>${estimatedTotal}</b></p>
+        <p className="p-small">Taxes, discounts, and shipping calculated at checkout</p>
+        <p className="p-small">But this is a fake shop, so PLEASE DO NOT CHECK OUT.</p>
         <button className="primary-button">Check out</button>
       </div>
     </div>
