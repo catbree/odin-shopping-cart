@@ -1,26 +1,14 @@
-# Odin Shopping Cart 
+Odin Shopping Cart
+------------------
 
-State: ShoppingCart Item Counter
+A shopping cart application created as an assignment for The Odin Project.
 
-NavBar (Home Logo, Shop Categories, Shopping Cart)
-Page Content Router
-    ShopPage ("/shop")
-    ProductPage ("/product")
-    CartPage ("/cart")
+Features
+--------
 
-ShopPage
-- Product Card Component
-- clicking into any brings them to product page
-
-ProductPage
-- Name of product
-- price
-- description
-- quantity
-- add to cart
-
-CaRTpAGE
-- Item, price, quantity, total
-- Final total
-- Submit your order
-
+-   **State Management**: Maintains the state of the shopping cart, including item counts.
+-   **Navigation Bar**: Links to Shop and Cart pages.
+-   **Page Content Router**: Handles navigation between pages:
+    -   ShopPage ("/shop")
+    -   ProductPage ("/products/") dynamically generated
+    -   CartPage ("/cart")
